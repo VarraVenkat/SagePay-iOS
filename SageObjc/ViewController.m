@@ -10,10 +10,7 @@
 #import "ViewController.h"
 #import <CommonCrypto/CommonCrypto.h>
 
-#import "CryptLib.h"
 #import "NSData+Base64.h"
-#import "AppDelegate.h"
-
 
 @interface ViewController (){
     NSString *webLoadString;
@@ -31,7 +28,7 @@
     //NSString * _key = @"TPjs72eMz5qBnaTa";
     
     NSString *base64Key  = @"VFBqczcyZU16NXFCbmFUYQ==";
-    NSString *dataString = @"VendorTxCode=TxCode-498657-1&Amount=36.95&Currency=GBP&Description=description&Website=http://192.168.2.19:8080/sagepay-php/&CustomerName=Fname&Surname&CustomerEMail=gopalreddy.509@gmail.com&VendorEMail=gopalreddy2440@gmail.com&BillingSurname=Surname&BillingFirstnames=Fname&BillingAddress1=BillAddress Line 1&BillingCity=BillCity&BillingPostCode=W1A 1BL&BillingCountry=GB&BillingPhone=447933000000&DeliveryFirstnames=Fname&DeliverySurname=Surname&DeliveryAddress1=BillAddress Line 1&DeliveryCity=BillCity&DeliveryPostCode=W1A 1BL&DeliveryCountry=GB&DeliveryPhone=447933000000&SuccessURL=http://192.168.2.19:8080/sagepay-php/&FailureURL=http://192.168.2.19:8080/sagepay-php/";
+    NSString *dataString = @"VendorTxCode=TxCode-496857-1&Amount=36.95&Currency=GBP&Description=description&Website=http://192.168.2.19:8080/sagepay-php/&CustomerName=Fname&Surname&CustomerEMail=gopalreddy.509@gmail.com&VendorEMail=gopalreddy2440@gmail.com&BillingSurname=Surname&BillingFirstnames=Fname&BillingAddress1=BillAddress Line 1&BillingCity=BillCity&BillingPostCode=W1A 1BL&BillingCountry=GB&BillingPhone=447933000000&DeliveryFirstnames=Fname&DeliverySurname=Surname&DeliveryAddress1=BillAddress Line 1&DeliveryCity=BillCity&DeliveryPostCode=W1A 1BL&DeliveryCountry=GB&DeliveryPhone=447933000000&SuccessURL=http://192.168.2.19:8080/sagepay-php/&FailureURL=http://192.168.2.19:8080/sagepay-php/";
     
     NSData *key  = [[NSData alloc] initWithBase64EncodedString:base64Key  options:0];
     NSData *data = [dataString dataUsingEncoding:NSUTF8StringEncoding];
@@ -76,9 +73,7 @@
 }
 
 - (IBAction)loadWebview:(UIButton *)sender {
-    
-   // [[UIApplication sharedApplication]openURL:[NSURL URLWithString:webLoadString]];
-    
+        
     NSURL *url = [NSURL URLWithString:webLoadString];
     NSURLRequest *requestObj = [NSURLRequest requestWithURL:url];
     [self.myweb loadRequest:requestObj];
@@ -96,11 +91,11 @@
     
     if ([urlString rangeOfString:@"http://192.168.2.19:8080/sagepay-php/"].location == NSNotFound)
     {
-        NSLog(@"string does not contain bla");
+        NSLog(@"string does not contain URL");
     }
     else
     {
-        NSLog(@"string contains bla!");
+        NSLog(@"string contains URL!");
         
         NSURLSession *session = [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration]];
         
