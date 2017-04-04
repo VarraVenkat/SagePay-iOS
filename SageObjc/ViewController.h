@@ -8,8 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-
+@interface ViewController : UIViewController<UIWebViewDelegate>
+@property (strong, nonatomic) IBOutlet UIWebView *myweb;
+- (IBAction)loadWebview:(UIButton *)sender;
+- (IBAction)goBack:(UIButton *)sender;
+- (IBAction)goForward:(UIButton *)sender;
 
 @end
 

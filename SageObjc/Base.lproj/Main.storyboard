@@ -1,14 +1,18 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -16,11 +20,68 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cMh-dQ-dL4">
+                                <rect key="frame" x="0.0" y="94" width="375" height="573"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </webView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eWw-d8-WUY">
+                                <rect key="frame" x="20" y="49" width="90" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="90" id="BTK-Fu-aWs"/>
+                                    <constraint firstAttribute="height" constant="30" id="viD-Yg-JGL"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="Backward"/>
+                                <connections>
+                                    <action selector="goBack:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cF6-5S-neT"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Exe-8x-EOv">
+                                <rect key="frame" x="279" y="49" width="76" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="76" id="1R5-rR-90z"/>
+                                    <constraint firstAttribute="height" constant="30" id="grU-b9-qCm"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="Forward"/>
+                                <connections>
+                                    <action selector="goForward:" destination="BYZ-38-t0r" eventType="touchUpInside" id="EfR-z0-8AC"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PCa-8T-SEa">
+                                <rect key="frame" x="137" y="9" width="100" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="8Pd-Ga-5Nf"/>
+                                </constraints>
+                                <state key="normal" title="Load Webview"/>
+                                <connections>
+                                    <action selector="loadWebview:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8lV-UD-er8"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="cMh-dQ-dL4" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="1ZU-sS-dMY"/>
+                            <constraint firstAttribute="trailing" secondItem="cMh-dQ-dL4" secondAttribute="trailing" id="Fqc-cN-kMp"/>
+                            <constraint firstAttribute="trailing" secondItem="Exe-8x-EOv" secondAttribute="trailing" constant="20" id="GRT-IZ-kUy"/>
+                            <constraint firstItem="Exe-8x-EOv" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="29" id="Gm9-f3-5W1"/>
+                            <constraint firstItem="cMh-dQ-dL4" firstAttribute="top" secondItem="Exe-8x-EOv" secondAttribute="bottom" constant="15" id="OYB-Vf-zpU"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="cMh-dQ-dL4" secondAttribute="bottom" id="RA9-HK-IX7"/>
+                            <constraint firstItem="PCa-8T-SEa" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="9" id="VFk-U5-3ZG"/>
+                            <constraint firstItem="eWw-d8-WUY" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="29" id="XHw-2N-aHa"/>
+                            <constraint firstItem="eWw-d8-WUY" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="iLy-Xf-sIX"/>
+                            <constraint firstItem="PCa-8T-SEa" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="137" id="kf4-lq-6LZ"/>
+                            <constraint firstAttribute="trailing" secondItem="PCa-8T-SEa" secondAttribute="trailing" constant="138" id="wFJ-KP-27G"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="myweb" destination="cMh-dQ-dL4" id="cTe-0x-g42"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="117.59999999999999" y="122.78860569715144"/>
         </scene>
     </scenes>
 </document>

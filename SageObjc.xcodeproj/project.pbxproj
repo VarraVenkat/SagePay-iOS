@@ -13,6 +13,10 @@
 		B26F170A1E84DAA90024DBF1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B26F17081E84DAA90024DBF1 /* Main.storyboard */; };
 		B26F170C1E84DAA90024DBF1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B26F170B1E84DAA90024DBF1 /* Assets.xcassets */; };
 		B26F170F1E84DAA90024DBF1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B26F170D1E84DAA90024DBF1 /* LaunchScreen.storyboard */; };
+		B26F17461E84FC9C0024DBF1 /* NSData+Encryption.m in Sources */ = {isa = PBXBuildFile; fileRef = B26F17451E84FC9C0024DBF1 /* NSData+Encryption.m */; };
+		B26F17491E85004D0024DBF1 /* NSString+Encr.m in Sources */ = {isa = PBXBuildFile; fileRef = B26F17481E85004D0024DBF1 /* NSString+Encr.m */; };
+		B26F174F1E8518750024DBF1 /* CryptLib.m in Sources */ = {isa = PBXBuildFile; fileRef = B26F174C1E8518750024DBF1 /* CryptLib.m */; };
+		B26F17501E8518750024DBF1 /* NSData+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = B26F174E1E8518750024DBF1 /* NSData+Base64.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +30,14 @@
 		B26F170B1E84DAA90024DBF1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B26F170E1E84DAA90024DBF1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B26F17101E84DAA90024DBF1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B26F17441E84FC9C0024DBF1 /* NSData+Encryption.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+Encryption.h"; sourceTree = "<group>"; };
+		B26F17451E84FC9C0024DBF1 /* NSData+Encryption.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+Encryption.m"; sourceTree = "<group>"; };
+		B26F17471E85004D0024DBF1 /* NSString+Encr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Encr.h"; sourceTree = "<group>"; };
+		B26F17481E85004D0024DBF1 /* NSString+Encr.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Encr.m"; sourceTree = "<group>"; };
+		B26F174B1E8518750024DBF1 /* CryptLib.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CryptLib.h; sourceTree = "<group>"; };
+		B26F174C1E8518750024DBF1 /* CryptLib.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CryptLib.m; sourceTree = "<group>"; };
+		B26F174D1E8518750024DBF1 /* NSData+Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+Base64.h"; sourceTree = "<group>"; };
+		B26F174E1E8518750024DBF1 /* NSData+Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+Base64.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,9 +72,14 @@
 			children = (
 				B26F17021E84DAA90024DBF1 /* AppDelegate.h */,
 				B26F17031E84DAA90024DBF1 /* AppDelegate.m */,
+				B26F17081E84DAA90024DBF1 /* Main.storyboard */,
 				B26F17051E84DAA90024DBF1 /* ViewController.h */,
 				B26F17061E84DAA90024DBF1 /* ViewController.m */,
-				B26F17081E84DAA90024DBF1 /* Main.storyboard */,
+				B26F17441E84FC9C0024DBF1 /* NSData+Encryption.h */,
+				B26F17451E84FC9C0024DBF1 /* NSData+Encryption.m */,
+				B26F17471E85004D0024DBF1 /* NSString+Encr.h */,
+				B26F17481E85004D0024DBF1 /* NSString+Encr.m */,
+				B26F174A1E8518640024DBF1 /* Library */,
 				B26F170B1E84DAA90024DBF1 /* Assets.xcassets */,
 				B26F170D1E84DAA90024DBF1 /* LaunchScreen.storyboard */,
 				B26F17101E84DAA90024DBF1 /* Info.plist */,
@@ -77,6 +94,17 @@
 				B26F17001E84DAA90024DBF1 /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		B26F174A1E8518640024DBF1 /* Library */ = {
+			isa = PBXGroup;
+			children = (
+				B26F174B1E8518750024DBF1 /* CryptLib.h */,
+				B26F174C1E8518750024DBF1 /* CryptLib.m */,
+				B26F174D1E8518750024DBF1 /* NSData+Base64.h */,
+				B26F174E1E8518750024DBF1 /* NSData+Base64.m */,
+			);
+			name = Library;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -110,6 +138,7 @@
 				TargetAttributes = {
 					B26F16FB1E84DAA80024DBF1 = {
 						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = G2MLZD29CV;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -151,8 +180,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				B26F17071E84DAA90024DBF1 /* ViewController.m in Sources */,
+				B26F17501E8518750024DBF1 /* NSData+Base64.m in Sources */,
+				B26F17491E85004D0024DBF1 /* NSString+Encr.m in Sources */,
 				B26F17041E84DAA90024DBF1 /* AppDelegate.m in Sources */,
 				B26F17011E84DAA90024DBF1 /* main.m in Sources */,
+				B26F174F1E8518750024DBF1 /* CryptLib.m in Sources */,
+				B26F17461E84FC9C0024DBF1 /* NSData+Encryption.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -270,7 +303,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = G2MLZD29CV;
 				INFOPLIST_FILE = SageObjc/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Colors.SageObjc;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -281,7 +317,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = G2MLZD29CV;
 				INFOPLIST_FILE = SageObjc/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Colors.SageObjc;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -307,6 +346,7 @@
 				B26F17151E84DAA90024DBF1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
